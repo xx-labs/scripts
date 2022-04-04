@@ -13,7 +13,7 @@ async function wait(ms) {
 }
 
 /**
- * Connect to xxNetwork Public Node thorugh a websocket
+ * Connect to an xx network node using websocket
  * @return {Promise} chain api
  */
 async function connect() {

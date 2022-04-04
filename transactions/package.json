@@ -1,0 +1,17 @@
+{
+  "name": "transactions",
+  "version": "1.0.0",
+  "description": "Transaction construction, signing and broadcast",
+  "main": "index.js",
+  "repository": "github.com/xx-labs/scripts/transactions",
+  "author": "xx labs",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@polkadot/api": "^7.15.1",
+    "@polkadot/keyring": "^8.7.1",
+    "dotenv": "^16.0.0"
+  }
+}
