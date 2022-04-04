@@ -1,9 +1,19 @@
+# env
+**/.env
+
+# node modules
+**/node_modules
+
 # IDE
 .idea
-
-# Packages
-*/node_modules
+.vscode
 
 # Local network
 localnet/db
 localnet/chain.log
+
+# macos
+**/.DS_Store
+
+# logs
+**/logs
