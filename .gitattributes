@@ -1,0 +1,2 @@
+localnet/bin/xxnetwork-chain-darwin filter=lfs diff=lfs merge=lfs -text
+localnet/bin/xxnetwork-chain-linux filter=lfs diff=lfs merge=lfs -text
