@@ -32,26 +32,32 @@ function isValidXXNetworkAddress(address) {
     }
 }
 
+// Address Validation
+function checkAddress(adddress) {
+    console.log(`Address: ${adddress}`)
+    console.log(`\t${isValidXXNetworkAddress(adddress)}\n\n`);
+}
+
 // Valid
 // true
-console.log(isValidXXNetworkAddress(validXXNetworkAddress));
+checkAddress(validXXNetworkAddress);
 
 // Invalid Checksum
 // false
-console.log(isValidXXNetworkAddress(invalidChecksumXXNetworkAddress));
+checkAddress(invalidChecksumXXNetworkAddress);
 
 // Too short
 // false
-console.log(isValidXXNetworkAddress(tooShortXXNetworkAddress));
+checkAddress(tooShortXXNetworkAddress);
 
 // Too long
 // false
-console.log(isValidXXNetworkAddress(tooLongXXNetworkAddress));
+checkAddress(tooLongXXNetworkAddress);
 
 // Wrong network
 // false
-console.log(isValidXXNetworkAddress(validPolkadotAddress));
+checkAddress(validPolkadotAddress);
 
 // Wrong network
 // false
-console.log(isValidXXNetworkAddress(validSubstrateAddress));
+checkAddress(validSubstrateAddress);

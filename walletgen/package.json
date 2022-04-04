@@ -6,6 +6,9 @@
   "repository": "github.com/xx-labs/scripts/walletgen",
   "author": "xx labs",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "@polkadot/keyring": "^8.7.1",
     "@polkadot/util-crypto": "^8.7.1"

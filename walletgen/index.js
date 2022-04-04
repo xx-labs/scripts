@@ -37,6 +37,6 @@ setTimeout(() => {
 
         // Print the wallet information
         console.log("Address: ", wallet.address);
-        console.log("Public Key: ", wallet.publicKey);
+        console.log(`Public Key: 0x${Buffer.from(wallet.publicKey).toString('hex')}`);
     });
 }, 50);
