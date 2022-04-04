@@ -3,3 +3,7 @@
 
 # Packages
 */node_modules
+
+# Local network
+localnet/db
+localnet/chain.log
