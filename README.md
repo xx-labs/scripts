@@ -18,7 +18,7 @@ To stop the network, simply do `make stop`.
 
 ### walletgen
 This directory contains a script with an example of how to generate an xx network Sleeve wallet.
-It uses golang code compile to WASM to generate the quantum-secure wallet, and
+It uses golang code compiled to WASM to generate the quantum-secure wallet, and
 `@polkadot/keyring` to create a standard xx network wallet from the Sleeve's output mnemonic.
 
 ### address-validation
