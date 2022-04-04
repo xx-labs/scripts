@@ -8,6 +8,8 @@ This directory includes a makefile and binaries to run a single-node local xx ne
 In order to download the binaries, git lfs is used.
 Refer to  https://git-lfs.github.com/ in order to install this tool.
 
+You can also compile the chain binary directly from the source [xxchain](https://github.com/xx-labs/xxchain). 
+
 You can run the local network using the Makefile:
  ```
 cd localnet
