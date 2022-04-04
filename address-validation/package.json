@@ -1,0 +1,12 @@
+{
+  "name": "address-validation",
+  "version": "1.0.0",
+  "description": "Example on how to validate an xx network address using SS58 format",
+  "main": "index.js",
+  "repository": "github.com/xx-labs/scripts/address-validation",
+  "author": "xx labs",
+  "license": "MIT",
+  "dependencies": {
+    "@polkadot/keyring": "^8.7.1"
+  }
+}

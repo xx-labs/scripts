@@ -3,3 +3,17 @@
 
 # node modules
 **/node_modules
+
+# IDE
+.idea
+.vscode
+
+# Local network
+localnet/db
+localnet/chain.log
+
+# macos
+**/.DS_Store
+
+# logs
+**/logs

@@ -1,0 +1,13 @@
+{
+  "name": "walletgen",
+  "version": "1.0.0",
+  "description": "Example of xx network wallet generation code in JS, using go compiled to WASM",
+  "main": "index.js",
+  "repository": "github.com/xx-labs/scripts/walletgen",
+  "author": "xx labs",
+  "license": "MIT",
+  "dependencies": {
+    "@polkadot/keyring": "^8.7.1",
+    "@polkadot/util-crypto": "^8.7.1"
+  }
+}
