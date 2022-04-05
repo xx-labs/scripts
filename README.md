@@ -33,9 +33,16 @@ This directory contains a script with logic to detect a transfer starting from a
 
 In order to run this script, first start the local network as described above.
 
-### transactions
-This directory contains a script with an example of an extrinsic (transaction) being created,
-signed and submitted to the local network.
-The transaction is a transfer from Alice to Bob, 2 dev accounts included in the dev network.
+### transactions + offline-sign
+These two directories contain scripts that should be used together.
+The scripts demonstrate a way to generate transactions connected to a node, but doing the actual
+signing on a separate offline machine.
 
-In order to run this script, first start the local network as described above.
+The transactions script has an example of creating a transfer extrinsic, sending 1000 coins
+from Alice to Bob. These 2 accounts are included in the dev network.
+The script will output the signing payload to the console and wait for the signature to proceed.
+
+The offline-sing script simply waits for a signing payload to be input into the console, and will
+sign it using Alice's wallet. Then it outputs the signature, which can be input into the first script.
+
+In order to run these script, first start the local network as described above.
