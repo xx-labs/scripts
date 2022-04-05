@@ -1,7 +1,8 @@
 const { ApiPromise, WsProvider } = require('@polkadot/api');
-const { Keyring } = require('@polkadot/keyring');
+const readline = require('readline');
 require('dotenv').config();
 
+const ALICE = '6a6XHUGV5mu33rX1vn3iivxxUR4hwoUapsuECGyHpPzfaNtt';
 const BOB = '6YXN1Q6Lx3u8tr2WVr5myb3zNa3pVG5FL3ku8uqckR5RoA21';
 
 /**
@@ -35,6 +36,18 @@ async function sendAndWait(extrinsic, final) {
     })
 }
 
+function askQuestion(query) {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+
+    return new Promise(resolve => rl.question(query, ans => {
+        rl.close();
+        resolve(ans);
+    }))
+}
+
 async function main () {
     // Connect to the node
     const api = await connect();
@@ -42,16 +55,40 @@ async function main () {
     // Create a extrinsic, transferring 1000 units to Bob (with 9 decimals)
     const transfer = api.tx.balances.transfer(BOB, 1000_000000000);
 
-    // Construct the keying, using ss58 format 55, which is registered for xx network
-    const keyring = new Keyring({ type: 'sr25519', ss58Format: 55 });
+    // Get the current nonce for the sending account
+    const nonce = await api.rpc.system.accountNextIndex(ALICE);
 
-    // Add Alice to our keyring with a hard-derived path (empty phrase, so uses dev account)
-    const alice = keyring.addFromUri('//Alice');
+    // Create the signing payload
+    // These options are for an immortal extrinsic
+    const signPayload = api.registry.createTypeUnsafe('SignerPayload', [
+        {
+            genesisHash: api.genesisHash,
+            blockHash: api.genesisHash,
+            runtimeVersion: api.runtimeVersion,
+            signedExtensions: api.registry.signedExtensions,
+            version: 4,
+            specVersion: api.runtimeVersion.specVersion,
+            transactionVersion: api.runtimeVersion.transactionVersion,
+            nonce: nonce,
+            address: ALICE,
+            method: transfer.method,
+            blockNumber: 0,
+        }
+    ]);
 
-    // Sign the transfer extrinsic
-    await transfer.signAsync(alice);
+    // Print data to sign
+    console.log("Extrinsic payload to be signed");
+    console.log(signPayload.toRaw().data);
 
-    // Send and wait for transfer to be included in a block or finalized
+    const sig = await askQuestion('Paste the signature here\n');
+
+    // Add signature
+    transfer.addSignature(
+        ALICE,
+        sig.trim(),
+        signPayload.toPayload()
+    );
+
     await sendAndWait(transfer, true);
 }
 

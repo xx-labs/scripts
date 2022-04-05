@@ -1,0 +1,17 @@
+{
+  "name": "offline-sign",
+  "version": "1.0.0",
+  "description": "Sign a transaction without connection to a node",
+  "main": "index.js",
+  "repository": "github.com/xx-labs/scripts/offline-sign",
+  "author": "xx labs",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@polkadot/keyring": "^8.7.1",
+    "@polkadot/util": "^8.7.1",
+    "@polkadot/util-crypto": "^8.7.1"
+  }
+}
