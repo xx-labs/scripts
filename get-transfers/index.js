@@ -99,7 +99,7 @@ async function getReceipt(api, address, sender) {
         transfer = transfers.filter((tx) => (tx.to === address));
       }
       if (transfer.length) {
-        console.log(`Found Transfer in block #${blockNumber} ${sender ? 'from' : 'to'} Address: `, transfer);
+        console.log(`Found Transfer in block #${blockNumber} ${sender ? 'from' : 'to'} ${address}: `, transfer);
         resolve();
       }
     });
