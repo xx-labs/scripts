@@ -97,7 +97,7 @@ async function main() {
 
   // Load Keyring
   keyring.loadAll({
-    genesisHash: api.genesisHash, isDevelopment: false, ss58Format: 55, type: 'sr25519',
+    genesisHash: api.genesisHash, isDevelopment: false, ss58Format: api.consts.system.ss58Prefix, type: 'sr25519',
   });
 
   // Add mnemonics
