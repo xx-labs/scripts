@@ -17,6 +17,3 @@ localnet/chain.log
 
 # logs
 **/logs
-
-# extra files
-**/backup.json
