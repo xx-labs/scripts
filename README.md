@@ -18,6 +18,29 @@ make run
 
 To stop the network, simply do `make stop`.
 
+#### localnet/generate
+
+The standard substrate dev accounts can be used in the network. Furthermore, there are extra accounts
+funded, which can be found in `generate/mnemonics.json`.
+
+New accounts and a new genesis block can be generated running `make generate`. The number of accounts
+to generate, and the funds to credit to each can be defined in the makefile variables `accounts` and `funds`.
+The default values are `10` accounts with `1000` coins each.
+
+#### localnet/backup
+
+To use the generated accounts, the keyring file found in `backup/backup.json` can be imported into the [explorer](https://explorer.xx.network).
+
+In `backup/index.js` there are some global variables that define the arguments of the backup generation program:
+- `accountPrefixName` - accounts will be named with this prefix and followed by its index
+- `accountsPassword` - password used to encrypt all the accounts (you can set a list of passwords. size of array needs to match `numAccounts`)
+- `filePassword` - password used to encrypt the content of the json file to be uploaded in the explorer
+- `backupFile` - name of the generated json file to be uploaded in the explorer
+
+If new accounts are generated as described above, start the network using `make run` and then 
+run `make create-backup` to create the new backup file containing those accounts.
+
+
 ### walletgen
 This directory contains a script with an example of how to generate an xx network Sleeve wallet.
 It uses golang code compiled to WASM to generate the quantum-secure wallet, and
