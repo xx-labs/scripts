@@ -2,6 +2,7 @@ const fs = require('fs');
 const { execSync } = require('child_process');
 const os = require('os');
 
+const LEDGER = '6WA132Y5Ycgz3cXUt6a6rEhcJ4imhxXAij7x5Gefha5wu83g';
 const genesisTemplateFile = './template.json';
 
 /**
@@ -138,6 +139,9 @@ async function main() {
   accounts.forEach((elem) => {
     template.genesis.runtime.balances.balances.push([elem.Address, funds]);
   });
+
+  // Add funds to ledger address
+  template.genesis.runtime.balances.balances.push([LEDGER, funds]);
 
   // Save genesis template
   saveJSONFile(template, genesisTemplateFile);

@@ -67,7 +67,7 @@ async function main() {
     genesisHash: api.genesisHash, isDevelopment: false, ss58Format: api.consts.system.ss58Prefix, type: 'sr25519',
   });
 
-  console.log('Network genesis hash: ', api.genesisHash);
+  console.log('Network genesis hash: ', api.genesisHash.toHex());
 
   // Add mnemonics
   const accounts = mnemonics.map((element, index) => {
