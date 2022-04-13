@@ -1,4 +1,4 @@
-const { newElixxirApp } = require('@zondax/ledger-substrate');
+const { newXXNetworkApp } = require('@zondax/ledger-substrate');
 const TransportNodeHid = require("@ledgerhq/hw-transport-node-hid");
 const { ApiPromise, WsProvider } = require('@polkadot/api');
 require('dotenv').config();
@@ -7,7 +7,7 @@ const LEDGER = '6WA132Y5Ycgz3cXUt6a6rEhcJ4imhxXAij7x5Gefha5wu83g';
 const ALICE = '6a6XHUGV5mu33rX1vn3iivxxUR4hwoUapsuECGyHpPzfaNtt';
 
 /**
- * Connect to an xx network node using websocket
+ * Connect to a xx network node using websocket
  * @return {Promise} chain api
  */
 async function connect() {
@@ -40,12 +40,12 @@ async function sendAndWait(extrinsic, final) {
 async function main () {
     const transport = await TransportNodeHid.default.create();
 
-    const app = newElixxirApp(transport);
+    const app = newXXNetworkApp(transport);
 
     // Connect to the node
     const api = await connect();
 
-    // Create a extrinsic, transferring 10 units to Alice (with 9 decimals)
+    // Create an extrinsic, transferring 10 units to Alice (with 9 decimals)
     const transfer = api.tx.balances.transfer(ALICE, 10_000000000);
 
     // Get the current nonce for the sending account

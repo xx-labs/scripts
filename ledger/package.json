@@ -12,7 +12,7 @@
   "dependencies": {
     "@ledgerhq/hw-transport-node-hid": "^6.24.1",
     "@polkadot/api": "^7.15.1",
-    "@zondax/ledger-substrate": "^0.24.0",
+    "@zondax/ledger-substrate": "^0.25.0",
     "dotenv": "^16.0.0"
   }
 }
