@@ -7,7 +7,7 @@
   "author": "xx labs",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "WS_CHAIN='ws://localhost:63007' node index.js"
   },
   "dependencies": {
     "@ledgerhq/hw-transport-node-hid": "^6.24.1",

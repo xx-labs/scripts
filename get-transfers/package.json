@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "WS_CHAIN='ws://localhost:63007' node index.js"
   },
   "devDependencies": {
     "eslint": "^8.12.0",

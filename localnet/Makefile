@@ -15,7 +15,7 @@ generate:
 
 run:
 	@rm -rf db chain.log
-	$(BINPATH) --alice --chain ./generate/genesis.json --base-path ./db --rpc-cors all > ./chain.log 2>&1 &
+	$(BINPATH) --alice --chain ./generate/genesis.json --base-path ./db --ws-port 63007 --rpc-cors all > ./chain.log 2>&1 &
 
 create-backup:
 	@cd ./backup; yarn start
