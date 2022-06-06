@@ -1,0 +1,16 @@
+{
+  "name": "balance",
+  "version": "1.0.0",
+  "description": "Get the balance of an account",
+  "main": "index.js",
+  "repository": "github.com/xx-labs/scripts/balance",
+  "author": "xx labs",
+  "license": "MIT",
+  "scripts": {
+    "start": "WS_CHAIN='ws://localhost:63007' node index.js"
+  },
+  "dependencies": {
+    "@polkadot/api": "^7.15.1",
+    "dotenv": "^16.0.0"
+  }
+}
