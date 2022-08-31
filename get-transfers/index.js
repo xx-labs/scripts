@@ -61,7 +61,10 @@ async function getAPI() {
  */
 function getTransfers(blockEvents) {
   const transfers = blockEvents
-    .filter((record) => (record.event.section === 'balances' && record.event.method === 'Transfer'))
+    .filter((record, idx) =>
+      (record.event.section === 'balances' && record.event.method === 'Transfer') &&
+      !(blockEvents[idx+1].event.section === 'vesting' && blockEvents[idx+1].event.method === 'VestingUpdated')
+    )
     .map(({ event: { data } }) => ({
       from: data[0].toHuman(),
       to: data[1].toHuman(),
