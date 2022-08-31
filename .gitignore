@@ -8,6 +8,12 @@
 .idea
 .vscode
 
+# Yarn
+.yarn-integrity
+yarn.lock
+yarn-debug.log*
+yarn-error.log*
+
 # Local network
 localnet/db
 localnet/chain.log
