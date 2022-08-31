@@ -1,0 +1,26 @@
+{
+  "name": "walletgen-rust",
+  "version": "1.0.0",
+  "description": "Example of xx network Sleeve wallet generation code in JS, using @polkadot/wasm",
+  "main": "index.js",
+  "repository": "github.com/xx-labs/scripts/walletgen-rust",
+  "author": "xx labs",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@polkadot/keyring": "^10.1.6",
+    "@polkadot/util": "^10.1.6",
+    "@polkadot/wasm-crypto": "^6.3.1",
+    "@polkadot/x-randomvalues": "^10.1.6"
+  },
+  "resolutions": {
+    "@polkadot/wasm-bridge": "https://github.com/xx-labs/wasm/blob/xx-network/built/wasm-bridge.tgz?raw=true",
+    "@polkadot/wasm-crypto-asmjs": "https://github.com/xx-labs/wasm/blob/xx-network/built/wasm-crypto-asmjs.tgz?raw=true",
+    "@polkadot/wasm-crypto-init": "https://github.com/xx-labs/wasm/blob/xx-network/built/wasm-crypto-init.tgz?raw=true",
+    "@polkadot/wasm-crypto-wasm": "https://github.com/xx-labs/wasm/blob/xx-network/built/wasm-crypto-wasm.tgz?raw=true",
+    "@polkadot/wasm-crypto": "https://github.com/xx-labs/wasm/blob/xx-network/built/wasm-crypto.tgz?raw=true",
+    "@polkadot/wasm-util": "https://github.com/xx-labs/wasm/blob/xx-network/built/wasm-util.tgz?raw=true"
+  }
+}
