@@ -20,7 +20,7 @@ async function connect() {
 }
 
 async function sendAndWait(extrinsic, final) {
-    return new Promise((reject, resolve) => {
+    return new Promise((resolve, reject) => {
         // Sign and send the extrinsic using our wallet
         extrinsic.send(({ status }) => {
             if (status.isInBlock) {

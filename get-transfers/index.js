@@ -83,7 +83,7 @@ function getTransfers(blockEvents) {
 async function getReceipt(api, address, sender) {
   console.log('Starting finalized blocks listener...');
 
-  return new Promise((reject, resolve) => {
+  return new Promise((resolve, reject) => {
     api.rpc.chain.subscribeFinalizedHeads(async (header) => {
       // Get block number
       const blockNumber = header.number.toNumber();
